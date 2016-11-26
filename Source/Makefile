@@ -43,9 +43,9 @@ CPPFLAGS	=	-c -D "WIN32" -D "_WINDOWS" -D "_UNICODE" -D "UNICODE" \
 				-D "PLATFORM_$(BUILD_PLATFORM)_$(BUILD_ARCH)_$(BITTYPE)" \
 				-D "BITSIZE_$(BITTYPE)" -D "ARCH_$(BUILD_ARCH)" \
 				-D "_XOPEN_SOURCE_EXTENDED" \
-				-I"$(TOPSRC)/Headers" \
+				-I"$(TOPSRC)/Headers" -I"$(KATANA_ROOT)/Utl/Dev/DAInterface" \
 				-I"/usr/$(MINGWW64VER)/usr/include" -std=c++11
-LINK		=	-lws2_32 -luser32 -lkernel32 -lgdi32 -lm -lgcc -lstdc++
+LINK		=	-lws2_32 -luser32 -lkernel32 -lgdi32 -lm -lgcc -lstdc++ -lopengl32
 LINKFLAGS	=	-L/usr/$(MINGW_PREFIX)/sys-root/mingw/lib \
 				-L/lib/gcc/$(MINGW_PREFIX)/$(MINGWW64VER) \
 				-Wl,--subsystem,windows
